@@ -8,14 +8,11 @@ android {
     compileSdk 33
 
     defaultConfig {
-        minSdk 24
+        minSdkVersion 24
 
         targetSdkVersion 33
         versionCode 1
         versionName "1.0"
-
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        consumerProguardFiles "consumer-rules.pro"
     }
 
     buildTypes {
@@ -39,13 +36,6 @@ repositories {
 
 
 dependencies {
-
-    implementation 'androidx.appcompat:appcompat:1.6.1'
-    implementation 'com.google.android.material:material:1.11.0'
-    testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
-
     implementation 'org.firstinspires.ftc:Inspection:9.1.0'
     implementation 'org.firstinspires.ftc:Blocks:9.1.0'
     implementation 'org.firstinspires.ftc:Tfod:9.1.0'
@@ -65,7 +55,7 @@ afterEvaluate {
         publications {
             release(MavenPublication) {
                 from components.findByName('release')
-                groupId = 'com.github.tea505'
+                groupId = 'com.tea505.tealib'
                 artifactId = 'tealib'
                 version = '1.0'
             }
