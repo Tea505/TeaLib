@@ -71,8 +71,8 @@ afterEvaluate {
         publications {
             release(MavenPublication) {
                 from components.findByName('release')
-                groupId = 'com.hydraulichydras.hydralib'
-                artifactId = 'hydralib'
+                groupId = 'com.github.tea505'
+                artifactId = 'tealib'
                 version = '1.0'
             }
         }
