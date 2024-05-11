@@ -2,6 +2,16 @@ package com.tea505.tealib.controller;
 
 import com.tea505.tealib.util.MathUtils;
 
+/**
+ * Documentation on how to use this Controller.
+ * - Set up PIDCoefficients.
+ * - Set target velocity and update feedForwardInput with it.
+ * - Measure current velocity of the motor.
+ * - Calculate error by subtracting current velocity from target velocity.
+ * - Update error but using method.
+ * - Calculate signal power by running PIDF method.
+ * - Set motor velocity to signal power.
+ */
 public class PIDFController {
 
     private PIDCoefficients coefficients;
@@ -74,11 +84,6 @@ public class PIDFController {
     public PIDCoefficients getCoefficients() {
         return coefficients;
     }
-
-    public void setkP(double x) {
-        coefficients.kP = x;
-    }
-
     public double getkP() {
         return coefficients.kP;
     }
@@ -95,16 +100,19 @@ public class PIDFController {
         return coefficients.getFeedForwardCoefficient(feedForwardInput);
     }
 
-    public void setkI(double x) {
-        coefficients.kI = x;
+    public void setkP(double kP) {
+        coefficients.kP = kP;
+    }
+    public void setkI(double kI) {
+        coefficients.kI = kI;
     }
 
-    public void setD(double x) {
-        coefficients.kD = x;
+    public void setD(double kD) {
+        coefficients.kD = kD;
     }
 
-    public void setF(double x) {
-        coefficients.kF = x;
+    public void setF(double kF) {
+        coefficients.kF = kF;
     }
 
     public double getError() {

@@ -5,6 +5,7 @@ import com.tea505.tealib.util.MathUtils;
 public class Pose2d extends Point {
 
     private double heading;
+    private Vector2d tangent;
 
     public Pose2d(double x, double y, double heading) {
         super(x, y);
@@ -15,8 +16,9 @@ public class Pose2d extends Point {
         this(point.getX(), point.getY(), heading);
     }
 
-    public Pose2d(Vector2d vector2d, double heading) {
-        this(vector2d.getX(), vector2d.getY(), heading);
+    public Pose2d(Vector2d vector2d, double headingTan) {
+        super(vector2d.getX(), vector2d.getY());
+        this.tangent = new Vector2d(MathUtils.cosine(headingTan), MathUtils.sine(headingTan));
     }
 
     public void set(Pose2d other) {
@@ -47,6 +49,9 @@ public class Pose2d extends Point {
 
     public double getHeading() {
         return this.heading;
+    }
+    public Vector2d getTangent() {
+        return this.tangent;
     }
 
     @Override
