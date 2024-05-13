@@ -16,6 +16,13 @@ class ActionSequence {
         return this
     }
 
+    fun waitAction(milliseconds: Double): ActionSequence {
+        val waitAction = WaitAction(milliseconds)
+        val actionBase = ActionBase(waitAction)
+        actionList.add(actionBase)
+        return this
+    }
+
     fun build(): ActionSequence {
         actionRunner = Runnable {
             for (action in actionList) {
@@ -35,12 +42,6 @@ class ActionSequence {
     fun trigger() {
         if (hasPerformed) {
             perform()
-        }
-    }
-
-    fun run(start: Boolean) {
-        if (hasPerformed && start) {
-            trigger()
         }
     }
 
