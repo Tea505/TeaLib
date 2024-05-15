@@ -13,7 +13,7 @@ import org.firstinspires.ftc.robotcore.external.Telemetry;
 public abstract class Robot {
 
     /**
-     * The Operation Mode circumstance
+     * The Operational Mode circumstance
      */
     protected LinearOpMode opMode;
 
