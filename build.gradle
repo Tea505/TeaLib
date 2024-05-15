@@ -21,7 +21,6 @@ buildscript {
 }
 
 dependencies {
-    // FTC
     doc 'org.firstinspires.ftc:Hardware:9.1.0'
     doc 'org.firstinspires.ftc:RobotCore:9.1.0'
     doc 'org.firstinspires.ftc:FtcCommon:9.1.0'

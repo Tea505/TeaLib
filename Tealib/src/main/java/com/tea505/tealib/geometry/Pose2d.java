@@ -7,6 +7,10 @@ public class Pose2d extends Point {
     private double heading;
     private Vector2d tangent;
 
+    public Pose2d() {
+        this(0.0, 0.0, 0.0);
+    }
+
     public Pose2d(double x, double y, double heading) {
         super(x, y);
         this.heading = MathUtils.normalizeRadians(heading);

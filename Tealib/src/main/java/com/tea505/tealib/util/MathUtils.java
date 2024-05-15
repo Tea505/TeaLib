@@ -26,15 +26,6 @@ public class MathUtils {
         return Math.atan(value);
     }
 
-    public static double getRadRotDist(double start, double end) {
-        double difference = (end - start + Math.PI) % (2 * Math.PI) - Math.PI;
-        return difference < -Math.PI ? (difference + (Math.PI * 2)) : difference;
-    }
-
-    public static double getRotDist(double start, double end) {
-        return MathUtils.getRadRotDist(start, end);
-    }
-
     public static double absoluteValue(double x) {
         return Math.abs(x);
     }
@@ -47,22 +38,20 @@ public class MathUtils {
         return Math.pow(base, exponent);
     }
 
-    public static long factorial(int n) {
-        if (n < 0)
-            throw new IllegalArgumentException("Input must be non-negative.");
-        long result = 1;
-        for (int i = 1; i <= n; i++) {
-            result *= i;
-        }
-        return result;
-    }
-
     public static int max(int a, int b) {
         return Math.max(a, b);
     }
 
     public static int min(int a, int b) {
         return Math.min(a, b);
+    }
+
+    public static double signum(double distance) {
+        return Math.signum(distance);
+    }
+
+    public static float signum(float distance) {
+        return Math.signum(distance);
     }
 
     public static double degreesToRadians(double degrees) {
@@ -88,4 +77,35 @@ public class MathUtils {
         }
         return radians;
     }
+
+    public static double getRadRotDist(double start, double end) {
+        double difference = (end - start + Math.PI) % (2 * Math.PI) - Math.PI;
+        return difference < -Math.PI ? (difference + (Math.PI * 2)) : difference;
+    }
+
+    public static double getRotDist(double start, double end) {
+        return MathUtils.getRadRotDist(start, end);
+    }
+
+    public static long factorial(int n) {
+        if (n < 0)
+            throw new IllegalArgumentException("Input must be non-negative.");
+        long result = 1;
+        for (int i = 1; i <= n; i++) {
+            result *= i;
+        }
+        return result;
+    }
+
+    public static double sqrt(double x) {
+        if (x < 0) {
+            throw new IllegalArgumentException("Cannot calculate square root of a negative number");
+        }
+        return Math.sqrt(x);
+    }
+
+    public static double hypot(double x, double y) {
+        return Math.hypot(x, y);
+    }
+
 }

@@ -7,10 +7,21 @@ public class Vector2d {
     private double x;
     private double y;
 
+    public Vector2d() {
+        this(0.0, 0.0);
+    }
+
     public Vector2d(double x, double y) {
         this.x = x;
         this.y = y;
     }
+
+    public Vector2d(Vector2d other) {
+        this.x = other.getX();
+        this.y = other.getY();
+    }
+
+
 
     public Vector2d plus(Vector2d other) {
         return new Vector2d(x + other.getX(), y + other.getY() );
@@ -50,6 +61,10 @@ public class Vector2d {
 
     public Vector2d abs() {
         return new Vector2d(MathUtils.absoluteValue(getX()), MathUtils.absoluteValue(getY()));
+    }
+
+    public Vector2d project(Vector2d other) {
+        return other.mult(dot(other) / (magnitude() * other.magnitude()));
     }
 
     public double getX() {

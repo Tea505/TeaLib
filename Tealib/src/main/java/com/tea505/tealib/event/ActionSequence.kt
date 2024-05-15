@@ -1,6 +1,6 @@
 package com.tea505.tealib.event
 
-class ActionSequence {
+class ActionSequence() {
 
     var hasPerformed: Boolean = false
     private var actionList = ArrayList<ActionBase>()
@@ -10,13 +10,14 @@ class ActionSequence {
     init {
         hasPerformed = true
     }
+
     fun addAction(action: Action): ActionSequence {
         val actionBase = ActionBase(action)
         actionList.add(actionBase)
         return this
     }
 
-    fun waitAction(milliseconds: Double): ActionSequence {
+    fun addWaitAction(milliseconds: Double): ActionSequence {
         val waitAction = WaitAction(milliseconds)
         val actionBase = ActionBase(waitAction)
         actionList.add(actionBase)
