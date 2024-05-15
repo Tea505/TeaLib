@@ -4,20 +4,7 @@ With its user-friendly interface and robust functionality, TeaLib makes robotics
 freeing up teams to focus on innovation and problem-solving.
 
 ## Installation 
-To install the library, in `settings.gradle` add:
-</br>
-
-   ```gradle
-   dependencyResolutionManagement {
-		 repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
-		    repositories {
-			mavenCentral()
-                   maven { url "https://jitpack.io" }
-		}
-	}
-   ```  
-
-Then in `build.dependencies.gradle` add:
+To install the library, in `build.dependencies.gradle` add:
 </br>
 
    ```gradle
@@ -37,13 +24,14 @@ Afterwards in your team code module's `build.gradle` add:
     }
    ```
 
-Replacing `TAG` with the latest release or tag.
+Replacing `TAG` with the latest release or tag. Below is the latest Tag released.
 </br>
 </br>
 [![](https://jitpack.io/v/Tea505/TeaLib.svg)](https://jitpack.io/#Tea505/TeaLib)
 
 ## Documentation 💭✍
-TeaLib is java library written for FTC robotics competition. It is designed for both autonomous and tele operated robotic functions. 
+TeaLib is Java and Kotlin library written for FTC robotics competition. It is designed for both autonomous and tele operated robotic functions. 
+More information coming soon!!!
 
 
 
