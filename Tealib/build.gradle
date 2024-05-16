@@ -11,7 +11,7 @@ android {
     defaultConfig {
         minSdkVersion 24
 
-        targetSdkVersion 33
+        targetSdkVersion 29
         versionCode 1
         versionName "1.0"
     }
@@ -62,9 +62,6 @@ dependencies {
 
 dependencies {
     implementation 'org.openftc:easyopencv:1.7.2'
-}
-dependencies {
-    implementation 'org.openftc:apriltag:2.0.0'
 }
 
 afterEvaluate {
