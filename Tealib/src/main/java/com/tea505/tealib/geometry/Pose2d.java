@@ -8,10 +8,10 @@ import com.tea505.tealib.util.MathUtils;
 public class Pose2d extends Point {
 
     /** The heading of the pose. */
-    private double heading;
+    public double heading;
 
     /** The tangent vector of the pose. */
-    private Vector2d tangent;
+    public Vector2d tangent;
 
     /**
      * Constructs a pose with zero coordinates and heading.
@@ -104,29 +104,14 @@ public class Pose2d extends Point {
         return new Pose2d(this.getX() * scalar, this.getY() * scalar, this.getHeading() * scalar);
     }
 
-    /**
-     * Converts the pose to a vector.
-     *
-     * @return the pose as a vector
-     */
     public Vector2d toVector2d() {
         return new Vector2d(getX(), getY());
     }
 
-    /**
-     * Returns the heading of the pose.
-     *
-     * @return the heading
-     */
     public double getHeading() {
         return this.heading;
     }
 
-    /**
-     * Returns the tangent vector of the pose.
-     *
-     * @return the tangent vector
-     */
     public Vector2d getTangent() {
         return this.tangent;
     }

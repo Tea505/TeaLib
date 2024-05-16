@@ -121,110 +121,50 @@ public class PIDFController {
         previousUpdateTimeNano = System.nanoTime();
     }
 
-    /**
-     * Sets the target position for the system.
-     *
-     * @param set the target position
-     */
     public void setTargetPosition(double set) {
         targetPosition = set;
     }
 
-    /**
-     * Gets the target position for the system.
-     *
-     * @return the target position
-     */
     public double getTargetPosition() {
         return targetPosition;
     }
 
-    /**
-     * Gets the PID coefficients used for control calculations.
-     *
-     * @return the PID coefficients
-     */
     public PIDCoefficients getCoefficients() {
         return coefficients;
     }
 
-    /**
-     * Gets the proportional gain (kP) from the PID coefficients.
-     *
-     * @return the proportional gain
-     */
     public double getkP() {
         return coefficients.kP;
     }
 
-    /**
-     * Gets the integral gain (kI) from the PID coefficients.
-     *
-     * @return the integral gain
-     */
     public double getkI() {
         return coefficients.kI;
     }
 
-    /**
-     * Gets the derivative gain (kD) from the PID coefficients.
-     *
-     * @return the derivative gain
-     */
     public double getkD() {
         return coefficients.kD;
     }
 
-    /**
-     * Gets the feedforward gain (kF) from the PID coefficients.
-     *
-     * @return the feedforward gain
-     */
     public double getkF() {
         return coefficients.getFeedForwardCoefficient(feedForwardInput);
     }
 
-    /**
-     * Sets the proportional gain (kP) in the PID coefficients.
-     *
-     * @param kP the proportional gain
-     */
     public void setkP(double kP) {
         coefficients.kP = kP;
     }
 
-    /**
-     * Sets the integral gain (kI) in the PID coefficients.
-     *
-     * @param kI the integral gain
-     */
     public void setkI(double kI) {
         coefficients.kI = kI;
     }
 
-    /**
-     * Sets the derivative gain (kD) in the PID coefficients.
-     *
-     * @param kD the derivative gain
-     */
     public void setD(double kD) {
         coefficients.kD = kD;
     }
 
-    /**
-     * Sets the feedforward gain (kF) in the PID coefficients.
-     *
-     * @param kF the feedforward gain
-     */
     public void setF(double kF) {
         coefficients.kF = kF;
     }
 
-    /**
-     * Gets the current error.
-     *
-     * @return the current error
-     */
     public double getError() {
         return error;
     }

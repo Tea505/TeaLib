@@ -8,10 +8,10 @@ import com.tea505.tealib.util.MathUtils;
 public class Point {
 
     /** The x-coordinate of the point. */
-    private double x;
+    public double x;
 
     /** The y-coordinate of the point. */
-    private double y;
+    public double y;
 
     /**
      * Constructs a new point with the specified x and y coordinates.
@@ -115,38 +115,18 @@ public class Point {
         return other.minus(this).radius();
     }
 
-    /**
-     * Returns the x-coordinate of the point.
-     *
-     * @return the x-coordinate
-     */
     public double getX() {
         return this.x;
     }
 
-    /**
-     * Returns the y-coordinate of the point.
-     *
-     * @return the y-coordinate
-     */
     public double getY() {
         return this.y;
     }
 
-    /**
-     * Sets the x-coordinate of the point.
-     *
-     * @param x the x-coordinate to set
-     */
     public void setX(double x) {
         this.x = x;
     }
 
-    /**
-     * Sets the y-coordinate of the point.
-     *
-     * @param y the y-coordinate to set
-     */
     public void setY(double y) {
         this.y = y;
     }

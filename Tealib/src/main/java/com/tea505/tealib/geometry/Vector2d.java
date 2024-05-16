@@ -143,40 +143,18 @@ public class Vector2d {
         return other.mult(dot(other) / (magnitude() * other.magnitude()));
     }
 
-    /**
-     * Returns the x-component of the vector.
-     *
-     * @return the x-component
-     */
     public double getX() {
         return x;
     }
 
-    /**
-     * Returns the y-component of the vector.
-     *
-     * @return the y-component
-     */
     public double getY() {
         return y;
     }
 
-    /**
-     * Sets the x-component of the vector.
-     *
-     * @param x the x-component to set
-     * @return the updated x-component
-     */
     public double setX(double x) {
         return this.x = x;
     }
 
-    /**
-     * Sets the y-component of the vector.
-     *
-     * @param y the y-component to set
-     * @return the updated y-component
-     */
     public double setY(double y) {
         return this.y = y;
     }
