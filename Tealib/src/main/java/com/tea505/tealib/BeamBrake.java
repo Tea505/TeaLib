@@ -1,4 +1,4 @@
-package com.tea505.tealib.system;
+package com.tea505.tealib;
 
 import com.qualcomm.robotcore.hardware.DigitalChannel;
 import com.qualcomm.robotcore.hardware.HardwareMap;
@@ -39,11 +39,9 @@ public class BeamBrake implements Sensor {
 
     /**
      * Checks if the beam brake sensor is broken.
-     *
-     * @return true if the beam brake sensor is broken, false otherwise
      */
-    public boolean isBroken() {
-        return !beamBrake.getState();
+    public void isBroken() {
+        beamBrake.getState();
     }
 
     /**

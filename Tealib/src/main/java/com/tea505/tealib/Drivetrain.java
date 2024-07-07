@@ -1,6 +1,6 @@
-package com.tea505.tealib.system;
+package com.tea505.tealib;
 
-import com.tea505.tealib.geometry.Pose2d;
+import com.tea505.teaplanner.core.geometry.Pose;
 
 /**
  * A Drivetrain interface that your Drivetrain file should implement.
@@ -11,7 +11,7 @@ public interface Drivetrain {
      *  This method sets power to the drivetrain motors using Pose2d.
      *  Can be used for Autonomous and TeleOp both.
      *
-     * @param pose2d The positional power supplied to the Drivetrain
+     * @param pose The positional power supplied to the Drivetrain
      */
-    void set(Pose2d pose2d);
+    void set(Pose pose);
 }

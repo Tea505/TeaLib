@@ -1,4 +1,4 @@
-package com.tea505.tealib.system;
+package com.tea505.tealib;
 
 /**
  * A Subsystem class file if you want to go for a different style.
