@@ -49,7 +49,9 @@ dependencies {
     implementation 'org.firstinspires.ftc:Hardware:9.1.0'
     implementation 'org.firstinspires.ftc:FtcCommon:9.1.0'
 
-    implementation 'com.github.Tea505:TeaLeafPlanner:v1.0.1'
+    implementation 'com.github.Tea505:TeaLeafPlanner:v1.0.3'
+
+    implementation 'org.openftc:easyopencv:1.7.3'
 }
 
 afterEvaluate {

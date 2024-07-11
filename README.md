@@ -30,8 +30,5 @@ Replacing `TAG` with the latest release or tag. Below is the latest Tag released
 [![](https://jitpack.io/v/Tea505/TeaLib.svg)](https://jitpack.io/#Tea505/TeaLib)
 
 ## Documentation 💭✍
-TeaLib is Java and Kotlin library written for FTC robotics competition. It is designed for both autonomous and tele operated robotic functions. 
+TeaLib is a Java library written for FTC robotics competition. It is designed for both autonomous and tele operated robotic functions. 
 More information coming soon!!!
-
-
-
