@@ -3,9 +3,12 @@ package com.tea505.tealib;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.hardware.VoltageSensor;
 
+import java.util.concurrent.TimeUnit;
+
 public class VoltageIterator implements Sensor {
 
-    public VoltageSensor sensor;
+    private VoltageSensor sensor;
+    private boolean printWarning = false;
 
     @Override
     public void initialize(HardwareMap hardwareMap) {
@@ -14,31 +17,72 @@ public class VoltageIterator implements Sensor {
 
     @Override
     public void update() {
-        sensor.getVoltage();
+        if (getVolt() <= 5.00) {
+            System.out.println("CHARGE YOUR BATTERY");
+        }
+    }
+
+    public double getVolt() {
+        return sensor.getVoltage();
     }
 
     /**
-     * This functions allows users to send out a warning if the specified voltage is reached during an OpMode.
-     * Throws an exception if the voltage specified is either too high or too low for measurement.
+     * Prints out a warning if the voltage reaches specified limits.
+     * Throws an exception if the specified voltage limits are invalid.
+     *
+     * @param voltage    The voltage limit for the warning.
+     * @param minVoltage The minimum acceptable voltage limit.
+     * @param maxVoltage The maximum acceptable voltage limit.
      */
-    public boolean warningIteration(double voltage) {
-        double maxVoltage = 14.00;
-        double minVoltage = 7.00;
-
+    public void warningIteration(double voltage, double minVoltage, double maxVoltage) {
         if (voltage > maxVoltage || voltage < minVoltage) {
-            throw new IllegalArgumentException("Voltage required is too high or too low, keep it below 14.00 and above 7.00");
+            throw new IllegalArgumentException("Voltage limit is out of range. " +
+                    "Make sure it is between min and max values.");
         }
 
-        if (sensor.getVoltage() == voltage) {
-            System.out.println("Warning... Voltage limit reached");
-            return true;
-        } else if (sensor.getVoltage() < voltage) {
-            System.out.println("Warning... Voltage is below the limit, please switch out the battery");
-            return true;
-        } else {
-            System.out.println("Battery levels are fine...");
-            return false;
+        /*
+        while (getVolt() > voltage) {
+            printWarning = false;
+
+            if (getVolt() == voltage) {
+                printWarning = true;
+                System.out.println("Warning... Voltage limit reached.");
+
+                if (getVolt() < (voltage - 1.0)) {
+                    System.out.println("Warning... Voltage is below the limit.");
+                    printWarning = true;
+                }
+            } else {
+                System.out.println("Battery levels are fine...");
+                printWarning = false;
+            }
         }
 
+         */
+            double currentVoltage = getVolt();
+            if (currentVoltage == voltage && !printWarning) {
+                System.out.println("Warning... Voltage limit reached.");
+
+                if (currentVoltage < (voltage - 1.0)) {
+                    System.out.println("Warning... Voltage is below the limit.");
+                }
+                printWarning = true; // Set flag to true to indicate warning is printed
+                } else if (currentVoltage != voltage) {
+                    System.out.println("Battery levels are fine...");
+                    printWarning = false; // Reset flag if voltage goes below the limit
+                }
+
+                // Delay for 5 seconds before checking again
+                try {
+                    TimeUnit.SECONDS.sleep(5);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+
+
+    }
+
+    public boolean isWarningSent() {
+        return printWarning;
     }
 }
