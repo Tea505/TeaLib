@@ -52,7 +52,9 @@ public class DisplayCamera {
         }
     }
 
-    public String getDimensions() { return "Width: " + width + " Height: " + height + "Camera Rotation: " + rotation; }
+    public String getDimensions() {
+        return "Width: " + width + " Height: " + height + "Camera Rotation: " + rotation;
+    }
 
     public void stopStreaming() {
         camera.stopStreaming();
@@ -62,7 +64,9 @@ public class DisplayCamera {
         camera.setPipeline(pipeline);
     }
 
-    public void startStreaming(int width, int height, OpenCvCameraRotation rotation) { camera.startStreaming(width, height, rotation); }
+    public void startStreaming(int width, int height, OpenCvCameraRotation rotation) {
+        camera.startStreaming(width, height, rotation);
+    }
 
     public void startStreaming() {
         camera.startStreaming(width, height, rotation);
