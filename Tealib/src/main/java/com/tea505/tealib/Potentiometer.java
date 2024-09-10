@@ -30,11 +30,11 @@ public class Potentiometer implements Sensor {
     }
 
     public double getPositionRadians() {
-        return MathUtils.INSTANCE.degreesToRadians(position);
+        return MathUtils.degreesToRadians(position);
     }
 
     public double getPositionDegrees() {
-        return MathUtils.INSTANCE.radiansToDegrees(getPositionRadians());
+        return MathUtils.radiansToDegrees(getPositionRadians());
     }
 
     public double getRawPosition() {
