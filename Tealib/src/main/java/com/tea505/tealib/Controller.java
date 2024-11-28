@@ -75,8 +75,8 @@ public class Controller {
      * @param trigger  The Trigger being read
      * @param thresholdMultiplier The Trigger value gets multiplied by this to control certain powers.
      */
-    public double readTrigger(Button trigger, double thresholdMultiplier) {
-        double threshold = 0.0;
+    public boolean readTrigger(Button trigger, double thresholdMultiplier) {
+        boolean threshold = false;
 
         if (thresholdMultiplier > 1 || thresholdMultiplier < 0.0) {
             throw new IllegalArgumentException("Multiplier cannot be greater than 1 or less than 0.0");
@@ -84,10 +84,10 @@ public class Controller {
 
         switch (trigger) {
             case Left_Trigger:
-               threshold = gamepad.left_trigger * thresholdMultiplier;
+                if (gamepad.left_trigger * thresholdMultiplier > 0) threshold = true;
                break;
             case Right_Trigger:
-                threshold = gamepad.right_trigger * thresholdMultiplier;
+                if (gamepad.right_trigger * thresholdMultiplier > 0) threshold = true;
                 break;
             default:
                 break;

@@ -40,16 +40,15 @@ repositories {
 }
 
 dependencies {
-    implementation 'org.firstinspires.ftc:Inspection:9.1.0'
-    implementation 'org.firstinspires.ftc:Blocks:9.1.0'
-    implementation 'org.firstinspires.ftc:Tfod:9.1.0'
-    implementation 'org.firstinspires.ftc:RobotCore:9.1.0'
-    implementation 'org.firstinspires.ftc:RobotServer:9.1.0'
-    implementation 'org.firstinspires.ftc:OnBotJava:9.1.0'
-    implementation 'org.firstinspires.ftc:Hardware:9.1.0'
-    implementation 'org.firstinspires.ftc:FtcCommon:9.1.0'
+    implementation 'org.firstinspires.ftc:Inspection:10.1.1'
+    implementation 'org.firstinspires.ftc:Blocks:10.1.1'
+    implementation 'org.firstinspires.ftc:RobotCore:10.1.1'
+    implementation 'org.firstinspires.ftc:RobotServer:10.1.1'
+    implementation 'org.firstinspires.ftc:OnBotJava:10.1.1'
+    implementation 'org.firstinspires.ftc:Hardware:10.1.1'
+    implementation 'org.firstinspires.ftc:FtcCommon:10.1.1'
 
-    implementation 'com.github.Tea505:TeaLeafPlanner:v1.0.6'
+    implementation 'com.github.Tea505:TeaLeafPlanner:v1.0.7'
 
     implementation 'org.openftc:easyopencv:1.7.3'
 }

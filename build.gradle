@@ -16,11 +16,11 @@ buildscript {
 }
 
 dependencies {
-    doc 'org.firstinspires.ftc:Hardware:9.1.0'
-    doc 'org.firstinspires.ftc:RobotCore:9.1.0'
-    doc 'org.firstinspires.ftc:FtcCommon:9.1.0'
-    doc 'org.firstinspires.ftc:OnBotJava:9.1.0'
-    doc 'org.firstinspires.ftc:Inspection:9.1.0'
+    doc 'org.firstinspires.ftc:Hardware:10.1.1'
+    doc 'org.firstinspires.ftc:RobotCore:10.1.1'
+    doc 'org.firstinspires.ftc:FtcCommon:10.1.1'
+    doc 'org.firstinspires.ftc:OnBotJava:10.1.1'
+    doc 'org.firstinspires.ftc:Inspection:10.1.1'
 }
 
 allprojects {
@@ -30,6 +30,6 @@ allprojects {
     }
 }
 
-task clean(type: Delete) {
+tasks.register('clean', Delete) {
     delete rootProject.buildDir
 }
