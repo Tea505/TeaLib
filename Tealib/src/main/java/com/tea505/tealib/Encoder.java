@@ -8,7 +8,7 @@ import com.qualcomm.robotcore.hardware.DcMotorSimple;
  * This class encapsulates an encoder attached to a DC motor, providing methods to
  * manage and retrieve the encoder's position.
  */
-public class Encoder {
+public class Encoder{
 
     private DcMotorEx motorEx;
     private Direction direction;
