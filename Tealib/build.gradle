@@ -62,6 +62,7 @@ dependencies {
     implementation 'com.github.Tea505:TeaLeafPlanner:v1.0.7'
 
     implementation 'org.openftc:easyopencv:1.7.3'
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3"
 }
 
 afterEvaluate {
