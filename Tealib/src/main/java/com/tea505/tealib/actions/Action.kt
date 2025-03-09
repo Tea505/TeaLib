@@ -1,6 +1,5 @@
 package com.tea505.tealib.actions
 
-@FunctionalInterface
 interface Action {
 
     suspend fun init()
