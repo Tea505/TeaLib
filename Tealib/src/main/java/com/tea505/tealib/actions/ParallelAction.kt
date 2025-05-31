@@ -19,13 +19,13 @@ class ParallelAction
 
         registerGroupedActions(*action)
 
-        action.forEach { action ->
-            if (action.getRequirements().intersect(mRequirements).isNotEmpty()) {
+        action.forEach { actions ->
+            if (actions.getRequirements().intersect(mRequirements).isNotEmpty()) {
                 throw IllegalArgumentException("Multiple actions in a parallel group cannot require the same subsystems")
             }
-            toAction[action] = false
-            mRequirements.addAll(action.getRequirements())
-            performWhenDisabled = performWhenDisabled() && action.performWhenDisabled()
+            toAction[actions] = false
+            mRequirements.addAll(actions.getRequirements())
+            performWhenDisabled = performWhenDisabled() && actions.performWhenDisabled()
         }
     }
 

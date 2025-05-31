@@ -21,10 +21,10 @@ class ConsecutiveAction
 
         registerGroupedActions(*action)
 
-        action.forEach { action ->
-            toAction.add(action)
-            mRequirements.addAll(action.getRequirements())
-            performWhenDisabled = performWhenDisabled && action.performWhenDisabled()
+        action.forEach { actions ->
+            toAction.add(actions)
+            mRequirements.addAll(actions.getRequirements())
+            performWhenDisabled = performWhenDisabled && actions.performWhenDisabled()
         }
     }
 
