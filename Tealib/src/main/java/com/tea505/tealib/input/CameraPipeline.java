@@ -1,4 +1,4 @@
-package com.tea505.tealib;
+package com.tea505.tealib.input;
 
 import org.opencv.core.Mat;
 import org.openftc.easyopencv.OpenCvPipeline;

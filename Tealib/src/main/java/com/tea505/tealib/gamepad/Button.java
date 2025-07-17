@@ -1,4 +1,4 @@
-package com.tea505.tealib;
+package com.tea505.tealib.gamepad;
 
 /**
  *  This class is strictly for the Controller class and serves no other purpose.

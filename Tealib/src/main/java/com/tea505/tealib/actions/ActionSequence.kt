@@ -51,6 +51,11 @@ class ActionSequence {
             return
         }
 
+        /*
+        if (ActionGroupBase.getGroupedActions().isEmpty()) {
+            throw EmptyActionSequenceException()
+        }  */
+
         if (ActionGroupBase.getGroupedActions().contains(action)) {
             throw IllegalArgumentException(
                 "An action that is part of a group cannot be independently scheduled"

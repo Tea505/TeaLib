@@ -1,4 +1,4 @@
-package com.tea505.tealib
+package com.tea505.tealib.utils
 
 import kotlin.math.max
 import kotlin.math.min

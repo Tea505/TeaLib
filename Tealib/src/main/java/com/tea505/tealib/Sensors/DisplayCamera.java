@@ -1,6 +1,7 @@
-package com.tea505.tealib;
+package com.tea505.tealib.Sensors;
 
 import com.qualcomm.robotcore.hardware.HardwareMap;
+import com.tea505.tealib.input.CameraPipeline;
 
 import org.firstinspires.ftc.robotcore.external.hardware.camera.WebcamName;
 import org.openftc.easyopencv.OpenCvCamera;

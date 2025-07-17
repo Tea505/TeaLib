@@ -1,4 +1,4 @@
-package com.tea505.tealib;
+package com.tea505.tealib.input;
 
 import com.qualcomm.robotcore.hardware.HardwareMap;
 

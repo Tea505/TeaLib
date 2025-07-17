@@ -1,7 +1,8 @@
-package com.tea505.tealib;
+package com.tea505.tealib.Sensors;
 
 import com.qualcomm.robotcore.hardware.DigitalChannel;
 import com.qualcomm.robotcore.hardware.HardwareMap;
+import com.tea505.tealib.input.Sensor;
 
 /**
  * Class representing a beam brake sensor.

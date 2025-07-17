@@ -1,4 +1,4 @@
-package com.tea505.tealib
+package com.tea505.tealib.controllers
 
 class FeedForwardController(
     var kS: Double,
