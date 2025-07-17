@@ -2,7 +2,6 @@ package com.tea505.tealib;
 
 import com.qualcomm.robotcore.hardware.AnalogInput;
 import com.qualcomm.robotcore.hardware.HardwareMap;
-import com.tea505.teaplanner.core.utils.MathUtils;
 
 public class Potentiometer implements Sensor {
 
@@ -30,11 +29,11 @@ public class Potentiometer implements Sensor {
     }
 
     public double getPositionRadians() {
-        return MathUtils.degreesToRadians(position);
+        return Math.toRadians(position);
     }
 
     public double getPositionDegrees() {
-        return MathUtils.radiansToDegrees(getPositionRadians());
+        return Math.toDegrees(getPositionRadians());
     }
 
     public double getRawPosition() {

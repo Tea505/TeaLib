@@ -59,8 +59,6 @@ dependencies {
     implementation 'org.firstinspires.ftc:Hardware:10.2.0'
     implementation 'org.firstinspires.ftc:FtcCommon:10.2.0'
 
-    implementation 'com.github.Tea505:TeaLeafPlanner:v1.0.7'
-
     implementation 'org.openftc:easyopencv:1.7.3'
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3"
 }
