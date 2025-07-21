@@ -1,4 +1,4 @@
-package com.tea505.tealib.drive;
+package com.tea505.tealib.Sensors;
 
 import com.qualcomm.robotcore.hardware.AnalogInput;
 

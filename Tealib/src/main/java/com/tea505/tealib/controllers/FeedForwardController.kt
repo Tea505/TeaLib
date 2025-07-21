@@ -1,33 +1,26 @@
 package com.tea505.tealib.controllers
 
+import kotlin.math.sign
+
 class FeedForwardController(
-    var kS: Double,
-    var kG: Double,
     var kV: Double,
     var kA: Double,
+    var kS: Double,
+    var kG: Double,
 ) {
 
-    var kP: Double = 0.0;
-
-    constructor(kS: Double, kG: Double, kV: Double, kA: Double, kP: Double)
-        : this(kS, kG, kV, kA) {
-            this.kP = kP
-        }
-
-    // needs more work on this function haven't decided out to properly implement it
-    fun calculateServoOutput(theta: Double, vel: Double, accel: Double): Double {
-        var output : Double
-            = (kS * Math.signum(theta)) + (kG * Math.cos(theta)) + (kV * vel) + (kA * accel)
-
-        // clamp pos
-        output = Math.max(0.0, Math.min(1.0, output))
-        return output
+    fun setCoefficients(kV: Double,  kA: Double,  kS: Double, kG: Double) {
+        this.kV = kV
+        this.kA = kA
+        this.kS = kS
+        this.kG = kG
     }
 
-    // Motor output should be good ill have to test further tho
-    fun calculateMotorOutput(vel: Double, accel: Double, posError: Double) : Double {
-        val ffPower = (kS * Math.signum(vel)) + (kV * vel) + (kA * accel) + kG
-        val posCorrection: Double = kP * posError
-        return ffPower + posCorrection
+    fun calculateVertical(velocity: Double, acceleration: Double): Double {
+        return (kS * sign(velocity)) + (kV * velocity) + (kA * acceleration) + kG
+    }
+
+    fun calculate(velocity: Double): Double {
+        return calculateVertical(velocity, 0.0)
     }
 }

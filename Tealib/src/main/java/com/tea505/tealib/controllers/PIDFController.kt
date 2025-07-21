@@ -1,6 +1,7 @@
 package com.tea505.tealib.controllers
 
 import com.qualcomm.robotcore.util.ElapsedTime
+import kotlin.math.abs
 import kotlin.math.sign
 
 class PIDFController(
@@ -12,6 +13,7 @@ class PIDFController(
     var error: Double = 0.0
     var lastError: Double = 0.0
     var integralSum: Double = 0.0
+    var errorTolerance: Double = 0.05
 
     var timer: ElapsedTime = ElapsedTime()
 
@@ -20,6 +22,14 @@ class PIDFController(
         this.kI = kI
         this.kD = kD
         this.kF = kF
+    }
+
+    fun setTolerance(tolerance: Double) {
+        errorTolerance = tolerance
+    }
+
+    fun atSetPoint(): Boolean {
+        return abs(error) < errorTolerance
     }
 
     fun calculate(target: Double, setPoint: Double): Double {
@@ -31,7 +41,7 @@ class PIDFController(
         lastError = error
         timer.reset()
 
-        return (kP * error) + (kI * integralSum) + (kD * derivative) + ff
+        return if (abs(error) < errorTolerance) { 0.0 } else (kP * error) + (kI * integralSum) + (kD * derivative) + ff
     }
 
 }
