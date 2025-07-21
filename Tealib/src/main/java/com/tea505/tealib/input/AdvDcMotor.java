@@ -15,7 +15,6 @@ public class AdvDcMotor implements DcMotorSimple {
     public FeedForwardController controller;
     public PIDFController pidfController;
 
-    public double GEAR_RATIO;
     public Double ticksPerRev = null;
 
     public double currentPosition;
@@ -47,8 +46,7 @@ public class AdvDcMotor implements DcMotorSimple {
         this(hardwareMap.get(DcMotorEx.class, name));
     }
 
-    public void setConstants(double GearRatio, double ticksPerRev) {
-        this.GEAR_RATIO = GearRatio;
+    public void setTicksPerRev(double ticksPerRev) {
         this.ticksPerRev = ticksPerRev;
     }
 
